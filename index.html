@@ -10,20 +10,23 @@
 
     <title>Hello, world!</title>
   </head>
-    <script type="module">
-      import {callApi} from './js/utils.js';
 
-      document.getElementById('validateButton').addEventListener('click', ()=>{
-        callApi(document.getElementById('dprn').value);
-        });
-    </script>
+  <script type="module">
+    import {callApi} from './js/utils.js';
+
+    document.getElementById('validateButton').addEventListener('click', ()=>{
+      callApi(document.getElementById('dprn').value);
+      
+
+    });
+  </script>
 
 
   <body>
     <div class="container">
       <h1>Welcome</h1>
       <div class="row">
-        <div class="col-3">
+        <div class="col-sm-3">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">DPRN</span>
@@ -31,13 +34,17 @@
             <input type="text" aria-label="DPRN" id="dprn" class="form-control">
           </div>
         </div>
+        <div class="col-sm-2">
+          <div id="validationResults"></div>
+        </div> 
       </div>
       <div class="row">
         <div class="col-3">
            <button type="button" class="btn btn-primary" id="validateButton">Validate</button>
-        </div>
+        </div>       
       </div>
     </div>  
+
 
 
 

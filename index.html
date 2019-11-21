@@ -10,15 +10,34 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
-
-
     <script type="module">
-      import {addTextToBody} from './js/utils.js';
+      import {callApi} from './js/utils.js';
 
-      addTextToBody('Modules are pretty cool.');
+      document.getElementById('validateButton').addEventListener('click', ()=>{
+        callApi(document.getElementById('dprn').value);
+        });
     </script>
+
+
+  <body>
+    <div class="container">
+      <h1>Welcome</h1>
+      <div class="row">
+        <div class="col-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">DPRN</span>
+            </div>
+            <input type="text" aria-label="DPRN" id="dprn" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+           <button type="button" class="btn btn-primary" id="validateButton">Validate</button>
+        </div>
+      </div>
+    </div>  
 
 
 
